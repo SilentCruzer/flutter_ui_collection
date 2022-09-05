@@ -26,8 +26,8 @@ class _HomeState extends State<Home> {
               Row(
                 children: [
                   Container(
-                    width: screenWidth * 0.175,
-                    height: screenWidth * 0.175,
+                    width: screenWidth * 0.15,
+                    height: screenWidth * 0.15,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       image: DecorationImage(
@@ -39,9 +39,17 @@ class _HomeState extends State<Home> {
                   Container(
                     padding: EdgeInsets.only(left:20),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("name"),
-                        Text("date"),
+                        Text("Hello Jacob",
+                        style: TextStyle(
+                          color: Colors.grey,
+                        ),),
+                        Text("Friday, 10 June",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16
+                          ),),
                       ],
                     ),
                   ),
@@ -49,8 +57,8 @@ class _HomeState extends State<Home> {
               ),
 
         Container(
-          width: screenWidth * 0.175,
-          height: screenWidth * 0.175,
+          width: screenWidth * 0.15,
+          height: screenWidth * 0.15,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(100),
               border: Border.all(width: 1, color: Colors.grey.shade300)),
