@@ -2,6 +2,7 @@ import 'package:fitness_ui/MainPages/Track.dart';
 import 'package:flutter/material.dart';
 
 import 'MainPages/Home.dart';
+import 'constants.dart';
 
 void main() {
   runApp(const MyApp());
@@ -45,6 +46,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    screenWidth = MediaQuery.of(context).size.width;
+    screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.red.shade300,
