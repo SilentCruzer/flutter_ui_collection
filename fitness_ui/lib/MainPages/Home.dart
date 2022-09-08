@@ -1,5 +1,6 @@
 
 
+import 'package:fitness_ui/MainPages/components/Home/HomeSlide.dart';
 import 'package:fitness_ui/MainPages/components/Home/HomeTopBar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,10 @@ class _HomeState extends State<Home> {
       padding: EdgeInsets.only(left:20, right:20,top: 40, bottom: 40),
       child: Column(
         children: [
-          HomeTopBar()
+          HomeTopBar(),
+          SizedBox(height: 10),
+          HomeSlide()
+
         ],
       ),
     );
