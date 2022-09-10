@@ -30,7 +30,7 @@ class _HomeSlideState extends State<HomeSlide> {
     return CarouselSlider(
       options: CarouselOptions(
         padEnds: false,
-        height: 200.0,
+        height: 150.0,
         viewportFraction: 0.80,
         autoPlay: false,
         initialPage: 0,
