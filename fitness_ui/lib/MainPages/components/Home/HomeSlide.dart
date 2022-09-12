@@ -44,14 +44,18 @@ class _HomeSlideState extends State<HomeSlide> {
                 width: MediaQuery.of(context).size.width,
                 padding: EdgeInsets.all(5),
                 child: Container(
-                  padding: EdgeInsets.only(top: 30),
+                  padding: EdgeInsets.only(top: 20, right: 10),
                   decoration: new BoxDecoration(
-                      color: Colors.orange.shade50,
+                      color: Color(int.parse(card["color"]!)),
                       borderRadius: BorderRadius.all(Radius.circular(20.0))
                   ),
                   child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Image.asset(card["image"]!),
+                      Container(
+                          width: screenWidth * 0.3,
+                          child: Image.asset(card["image"]!)),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -68,12 +72,13 @@ class _HomeSlideState extends State<HomeSlide> {
                           ),
                           SizedBox(height: 5,),
                           Container(
-                            width: screenWidth * 0.4,
+                            width: screenWidth * 0.3,
                             child: Text(card["title"]!, style: TextStyle(
-                              fontSize: 20,
+                              fontSize: 15,
                             ),),
                           ),
-                          Text(card["title"]!, style: TextStyle(
+                          SizedBox(height: 5,),
+                          Text( "Starts on: " + card["startDate"]!.toString(), style: TextStyle(
                               fontSize: 12,
                             color: Colors.grey
                           ),)
