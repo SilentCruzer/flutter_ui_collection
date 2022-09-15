@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:fitness_ui/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -12,28 +13,13 @@ class HomePlans extends StatefulWidget {
 class _HomePlansState extends State<HomePlans> {
   @override
   Widget build(BuildContext context) {
-    int _currentIndex=0;
-    List cardList=[
-      Item1(),
-      Item1(),
-      Item1(),
-      Item1(),
-    ];
-
-    List<T> map<T>(List list, Function handler) {
-      List<T> result = [];
-      for (var i = 0; i < list.length; i++) {
-        result.add(handler(i, list[i]));
-      }
-      return result;
-    }
-
+    int _currentIndex = 0;
 
     return CarouselSlider(
       options: CarouselOptions(
         padEnds: false,
-        height: 200.0,
-        viewportFraction: 0.5,
+        height: 175.0,
+        viewportFraction: 0.4,
         autoPlay: false,
         initialPage: 0,
         enableInfiniteScroll: false,
@@ -46,60 +32,51 @@ class _HomePlansState extends State<HomePlans> {
           });
         },
       ),
-      items: cardList.map((card){
-        return Builder(
-            builder:(BuildContext context){
-              return Container(
-                height: MediaQuery.of(context).size.height*0.30,
-                width: MediaQuery.of(context).size.width,
-                child: Card(
-                  color: Colors.blueAccent,
-                  child: card,
-                ),
-              );
-            }
-        );
+      items: planSlideData.map((card) {
+        return Builder(builder: (BuildContext context) {
+          return Container(
+            height: MediaQuery.of(context).size.height * 0.30,
+            width: MediaQuery.of(context).size.width,
+            padding: EdgeInsets.all(5),
+            child: Container(
+              padding: EdgeInsets.only(top: 20, right: 10),
+              decoration: new BoxDecoration(
+                  color: Color(int.parse(card["color"]!)),
+                  borderRadius: BorderRadius.all(Radius.circular(20.0))),
+              child: Container(
+                  padding: EdgeInsets.only(left: 30, right: 30),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(right: 50),
+                        child:card["icon"] == "1"
+                            ? Icon(Icons.fitness_center,
+                            color: Colors.white, size: 30)
+                            : card["icon"] == "2"
+                            ? Icon(Icons.snowshoeing_sharp,
+                            color: Colors.orange, size: 30)
+                            : Icon(Icons.food_bank,
+                            color: Colors.blue, size: 30),
+                      ),
+                      SizedBox(height: 50,),
+
+                      Text(card["title"]!, style: TextStyle(
+                        color: card["icon"] == "1" ? Colors.white : Colors.black,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),),
+                      SizedBox(height: 5,),
+                      Text(card["stat"]!, style: TextStyle(
+                        color: card["icon"] == "1" ? Colors.white : Colors.black,
+                        fontSize: 12,
+                      ),)
+                    ],
+                  )),
+            ),
+          );
+        });
       }).toList(),
     );
   }
-
 }
-
-class Item1 extends StatelessWidget {
-  const Item1({Key? key}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            stops: [0.3, 1],
-            colors: [Color(0xffff4000),Color(0xffffcc66),]
-        ),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Text(
-              "Data",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 22.0,
-                  fontWeight: FontWeight.bold
-              )
-          ),
-          Text(
-              "Data",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 17.0,
-                  fontWeight: FontWeight.w600
-              )
-          ),
-        ],
-      ),
-    );
-  }
-}
-

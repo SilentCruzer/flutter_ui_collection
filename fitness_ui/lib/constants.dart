@@ -17,3 +17,24 @@ const mainSlideData = [
     "color" : "0xFFE3F2FD"
   }
 ];
+
+const planSlideData = [
+  {
+    "title": "Workout",
+    "stat": "1.5 Hours",
+    "icon" : "1",
+    "color" : "0xFF000000"
+  },
+  {
+    "title": "Running",
+    "stat": "15 Km",
+    "icon" : "2",
+    "color" : "0xFFFFF3E0"
+  },
+  {
+    "title": "Food",
+    "stat": "1926 Kcal",
+    "icon" : "3",
+    "color" : "0xFFE3F2FD"
+  },
+];
