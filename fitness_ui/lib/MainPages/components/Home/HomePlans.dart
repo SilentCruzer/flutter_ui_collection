@@ -47,6 +47,7 @@ class _HomePlansState extends State<HomePlans> {
                   padding: EdgeInsets.only(left: 30, right: 30),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
                         padding: EdgeInsets.only(right: 50),

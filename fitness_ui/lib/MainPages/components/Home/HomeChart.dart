@@ -12,30 +12,36 @@ class HomeChart extends StatefulWidget {
 class _HomeChartState extends State<HomeChart> {
   @override
   Widget build(BuildContext context) {
-    final List<ChartData> chartData = [
-      ChartData(2010, 35),
-      ChartData(2011, 13),
-      ChartData(2012, 34),
-      ChartData(2013, 27),
-      ChartData(2014, 40)
+    final List<ChartData> chartData = <ChartData>[
+      ChartData('Sat', 21),
+      ChartData('Sun', 24),
+      ChartData('Mon', 35),
+      ChartData('Tue', 38),
+      ChartData('Wed', 54),
+      ChartData('Thu', 21),
+      ChartData('Fri', 24),
     ];
     return Container(
-      height: 200,
         child: Center(
             child: Container(
-                child: SfCartesianChart(series: <ChartSeries>[
-      // Renders spline chart
-      SplineSeries<ChartData, int>(
-          dataSource: chartData,
-          xValueMapper: (ChartData data, _) => data.x,
-          yValueMapper: (ChartData data, _) => data.y)
-    ]))));
+              height: 250,
+                child: SfCartesianChart(
+                    primaryXAxis: CategoryAxis(),
+                    series: <ChartSeries>[
+                      SplineSeries<ChartData, String>(
+                          dataSource: chartData,
+                          xValueMapper: (ChartData data, _) => data.x,
+                          yValueMapper: (ChartData data, _) => data.y
+                      )
+                    ]
+                )
+            )
+        )
+    );
   }
 }
-
 class ChartData {
   ChartData(this.x, this.y);
-
-  final int x;
+  final String x;
   final double? y;
 }
