@@ -1,5 +1,6 @@
 import 'package:fitness_ui/MainPages/Track.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'MainPages/Home.dart';
 import 'constants.dart';
@@ -48,6 +49,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     screenWidth = MediaQuery.of(context).size.width;
     screenHeight = MediaQuery.of(context).size.height;
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark
+    ));
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.red.shade300,
