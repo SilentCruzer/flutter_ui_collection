@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
           //code to execute on button press
         },
-        child: Icon(Icons.send), //icon inside button
+        child: Icon(Icons.add), //icon inside button
       ),
 
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
