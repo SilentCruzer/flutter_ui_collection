@@ -1,4 +1,5 @@
 import 'package:date_picker_timeline/date_picker_widget.dart';
+import 'package:fitness_ui/MainPages/components/Track/KcalConsumed.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -46,6 +47,9 @@ class _TrackState extends State<Track> {
               ),
             ),
           ),
+          SizedBox(height: 20,),
+          KcalConsumed(),
+          SizedBox(height: 20,),
         ],
       ),
     );
