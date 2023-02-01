@@ -56,3 +56,26 @@ const chatData = [
     "online": "no",
   }
 ];
+
+const chatMessages = [
+  {
+    "time" : "Fri",
+    "type": "from",
+    "message": "So does it work for you?"
+  },
+  {
+    "time" : "Sat",
+    "type": "to",
+    "message": "Yep it definitely works for me"
+  },
+  {
+    "type": "to",
+    "message": "Just notify me when there are any further progress with it"
+  },
+  {
+    "time" : "11:30",
+    "type": "from",
+    "message": "Hey, there is an update on the project, can we meet?"
+  }
+
+];
