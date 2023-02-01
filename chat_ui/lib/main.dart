@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+          scaffoldBackgroundColor: Color.fromARGB(255, 32, 34, 42)
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -45,7 +46,6 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       extendBody: true,
       body: Container(
-        color: Colors.black87,
         child: pages[pageIndex],
       ),
       bottomNavigationBar: ClipRRect(
@@ -54,13 +54,13 @@ class _MyHomePageState extends State<MyHomePage> {
           topRight: Radius.circular(20.0),
         ),
         child: BottomAppBar(
-          color: Colors.black,
+          color: Color.fromARGB(255,21,23,28),
           //bottom navigation bar on scaffold
           //shape of notch
           notchMargin: 5,
           //notche margin between floating button and bottom appbar
           child: Padding(
-            padding: const EdgeInsets.only(top: 10, bottom: 10, left:20.0, right:20),
+            padding: const EdgeInsets.only(top: 20, bottom: 20, left:20.0, right:20),
             child: Row(
               //children inside bottom appbar
               mainAxisSize: MainAxisSize.max,
