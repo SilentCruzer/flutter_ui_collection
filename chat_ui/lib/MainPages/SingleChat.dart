@@ -1,3 +1,4 @@
+import 'package:chat_ui/MainPages/UserInfo.dart';
 import 'package:chat_ui/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -27,27 +28,34 @@ class _SingleChatState extends State<SingleChat> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        children: [
-                          Container(
-                            height: 40,
-                            width: 40,
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                image: DecorationImage(
-                                    image: NetworkImage(widget.data!["image"]!),
-                                    fit: BoxFit.cover)),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            widget.data!["name"]!,
-                            style: TextStyle(
-                              color: Colors.white,
+                      InkWell(
+                        onTap: () => {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => UserInfo(data: widget.data))),
+                        },
+                        child: Row(
+                          children: [
+                            Container(
+                              height: 40,
+                              width: 40,
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  image: DecorationImage(
+                                      image: NetworkImage(widget.data!["image"]!),
+                                      fit: BoxFit.cover)),
                             ),
-                          )
-                        ],
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              widget.data!["name"]!,
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                       Row(
                         children: [

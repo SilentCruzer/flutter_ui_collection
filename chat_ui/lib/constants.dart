@@ -79,3 +79,32 @@ const chatMessages = [
   }
 
 ];
+
+const linksData = [
+  {
+    "title" : "What are design sprints?",
+    "link" : "https://careerfoundry.com/en/blog/ux-design/what-are-design-sprints/",
+    "image" : "https://dpbnri2zg3lc2.cloudfront.net/en/wp-content/uploads/2022/12/AdobeStock_235640113.jpg",
+  },
+  {
+    "title" : "Designing motivation: the Seinfeld paradox",
+    "link" : "https://uxdesign.cc/designing-motivation-the-seinfeld-paradox-7032fcee9e5",
+    "image" : "https://miro.medium.com/v2/resize:fit:720/format:webp/1*nccSHXHK1XAqPcSSSReUpw.png",
+  },
+  {
+    "title" : "Breaking free from the fear of empty space in Design",
+    "link" : "https://uxdesign.cc/breaking-free-from-the-fear-of-empty-space-in-design-cc9f1ed68b98",
+    "image" : "https://miro.medium.com/max/720/0*j8pnoDpRM79Rl7yw",
+  },
+  {
+    "title" : "How to Become a Citizen Developer",
+    "link" : "https://buildfire.com/how-to-become-citizen-developer/",
+    "image" : "https://buildfire.com/wp-content/uploads/2022/11/Become-Citizen-Developer-Hero.png",
+  },
+  {
+    "title" : "What is a White Label App Builder?",
+    "link" : "https://buildfire.com/what-is-what-label-app-builder/",
+    "image" : "https://buildfire.com/wp-content/uploads/2020/04/BuildFire-Reseller-Webinar@3x.png",
+  },
+
+];
